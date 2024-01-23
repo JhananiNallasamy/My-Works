@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url('https://source.unsplash.com/1920x1080/?positive-dark'); /* Replace with a new image URL */
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(128, 0, 0, 0.8); /* Maroon background color */
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .form-group label {
+      color: #ffffff; /* Label text color */
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #333;
+      padding-top: 20px;
+    }
+
+    .sidebar-content {
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <form id="myForm">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+  </form>
+</div>
+
+<div class="sidebar">
+  <div class="sidebar-content" id="sidebarContent">
+    <!-- User details will appear here after submission -->
+  </div>
+</div>
+
+<script>
+  function submitForm() {
+    // Get form values
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var phoneNumber = document.getElementById('phoneNumber').value;
+    var email = document.getElementById('email').value;
+
+    // Display values in the sidebar
+    var sidebarContent = document.getElementById('sidebarContent');
+    sidebarContent.innerHTML =
+      '<p><strong>First Name:</strong> ' + firstName + '</p>' +
+      '<p><strong>Last Name:</strong> ' + lastName + '</p>' +
+      '<p><strong>Phone Number:</strong> ' + phoneNumber + '</p>' +
+      '<p><strong>Email:</strong> ' + email + '</p>';
+  }
+</script>
+
+</body>
+</html>
+
